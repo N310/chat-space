@@ -1,24 +1,48 @@
-# README
+# DB設計　
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users table
+| Field      | Type    | Null | Key   | Default | Extra          |
+|:-----------|:--------|:-----|:------|:--------|:---------------|
+| id         | INT     | No   | PRI   |         | auto_increment |
+| name       | VARCHAR | Yes  |       | Null    |                |
+| e-mail     | VARCHAR | Yes  |       | Null    |                |
+| password   | VARCHAR | Yes  |       | Null    |                |
 
-Things you may want to cover:
+### Association
+* has_many :groups, through: :users_groups
+* has_many :users_groups
+* has_many :messages
 
-* Ruby version
+## groups table
+| Field      | Type    | Null | Key  | Default | Extra          |
+|:-----------|:--------|:-----|:-----|:--------|:---------------|
+| id         | INT     | No   | PRI  |         | auto_increment |
+| name       | VARCHAR | Yes  |      | Null    |                |
 
-* System dependencies
+### Association
+* has_many :users, through: :users_groups
+* has_many :users_groups
+* has_many :messages
 
-* Configuration
+## users_groups table
+| Field      | Type       | Null | Key  | Default | Extra          |
+|:-----------|:-----------|:-----|:-----|:--------|:---------------|
+| user_id    | references | Yes  |      | Null    |                |
+| group_id   | references | Yes  |      | Null    |                |
 
-* Database creation
+### Association
+* belongs_to:user
+* belongs_to:group
 
-* Database initialization
+## messages table
+| Field      | Type       | Null | Key  | Default | Extra          |
+|:-----------|:-----------|:-----|:-----|:--------|:---------------|
+| id         | INT        | No   | PRI  |         | auto_increment |
+| body       | TEXT       | Yes  |      | Null    |                |
+| image      | VARCHAR    | Yes  |      | Null    |                |
+| user_id    | references | Yes  |      | Null    |                |
+| group_id   | references | Yes  |      | Null    |                |
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+* belongs_to:user
+* belongs_to:group
