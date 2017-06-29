@@ -1,10 +1,10 @@
 # DB設計　
 
 ## users table
-| Field	     | Type    | Null | Key   | Default | Extra          |
+| Field      | Type    | Null | Key   | Default | Extra          |
 |:-----------|:--------|:-----|:------|:--------|:---------------|
 | id         | INT     | No   | PRI   |         | auto_increment |
-| name       | VARCHAR | Yes  | :name | Null    |                |
+| name       | VARCHAR | Yes  |       | Null    |                |
 | e-mail     | VARCHAR | Yes  |       | Null    |                |
 | password   | VARCHAR | Yes  |       | Null    |                |
 
@@ -14,7 +14,7 @@
 * has_many :messages
 
 ## groups table
-| Field	     | Type    | Null | Key  | Default | Extra          |
+| Field      | Type    | Null | Key  | Default | Extra          |
 |:-----------|:--------|:-----|:-----|:--------|:---------------|
 | id         | INT     | No   | PRI  |         | auto_increment |
 | name       | VARCHAR | Yes  |      | Null    |                |
@@ -25,23 +25,23 @@
 * has_many :messages
 
 ## users_groups table
-| Field	     | Type    | Null | Key  | Default | Extra          |
-|:-----------|:--------|:-----|:-----|:--------|:---------------|
-| user_id    | INT     | Yes  |      | Null    |                |
-| group_id   | INT     | Yes  |      | Null    |                |
+| Field      | Type       | Null | Key  | Default | Extra          |
+|:-----------|:-----------|:-----|:-----|:--------|:---------------|
+| user_id    | references | Yes  |      | Null    |                |
+| group_id   | references | Yes  |      | Null    |                |
 
 ### Association
 * belongs_to:user
 * belongs_to:group
 
 ## messages table
-| Field	     | Type    | Null | Key  | Default | Extra          |
-|:-----------|:--------|:-----|:-----|:--------|:---------------|
-| id         | INT     | No   | PRI  |         | auto_increment |
-| body       | TEXT    | Yes  |      | Null    |                |
-| image      | VARCHAR | Yes  |      | Null    |                |
-| user_id    | INT     | Yes  |      | Null    |                |
-| group_id   | INT     | Yes  |      | Null    |                |
+| Field      | Type       | Null | Key  | Default | Extra          |
+|:-----------|:-----------|:-----|:-----|:--------|:---------------|
+| id         | INT        | No   | PRI  |         | auto_increment |
+| body       | TEXT       | Yes  |      | Null    |                |
+| image      | VARCHAR    | Yes  |      | Null    |                |
+| user_id    | references | Yes  |      | Null    |                |
+| group_id   | references | Yes  |      | Null    |                |
 
 ### Association
 * belongs_to:user
