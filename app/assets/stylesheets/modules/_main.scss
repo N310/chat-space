@@ -1,0 +1,11 @@
+.main {
+  @include clearfix;
+}
+.note {
+  background-color: $blue;
+  text-align: center;
+  .note__title {
+    color: $white;
+    line-height: 24px;
+  }
+}

@@ -1,0 +1,41 @@
+.note
+  %span.note__title
+    チャットグループが作成されました
+.main
+  .sidebar
+    .userInfo
+      %p.userInfo__name
+        sato
+      %span.userInfo__icon.userInfo__icon_setting
+        = link_to root_path do
+          %i.fa.fa-cog
+      %span.userInfo__icon.userInfo__icon_makegroup
+        = link_to root_path do
+          %i.fa.fa-pencil-square-o
+    .groupList
+      .groupList__name
+        sample
+      .groupList__message
+        Hello World!!
+  .contents
+    .threadHead
+      .threadHead__title
+        sample
+      .threadHead__members
+        Members: sato 310
+      .threadHead__edit
+        Edit
+    .messages
+      .messages__name
+        sato
+      .messages__date
+        2017/07/01 03:10:00
+      .messages__body
+        Hello World!!
+    .sendBox
+      .sendBox__input
+        type a message
+      .sendBox__images
+        icon_image
+      .sendBox__btn
+        Send

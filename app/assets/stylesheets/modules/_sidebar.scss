@@ -1,0 +1,27 @@
+.sidebar {
+  width: $sidebar-w;
+  height: 100vh;
+  float: left;
+  background-color: #2f3e51;
+  color: $white;
+  a {
+    color: $white;
+  }
+  .userInfo {
+    width: $sidebar-w - 20*2;
+    padding: 35px 20px;
+    background-color: #253141;
+    position: relative;
+    &__name {
+      font-size: 16px;
+      font-weight: bold;
+      display: inline-block;
+    }
+    &__icon {
+      float: right;
+      &_makegroup {
+        margin-right: 10px;
+      }
+    }
+  }
+}
