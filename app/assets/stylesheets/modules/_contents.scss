@@ -1,5 +1,6 @@
 .contents {
   width: calc(100vw - #{$sidebar-w});
+  min-width: 650px;
   height: 100vh;
   float: left;
   .threadHead {
@@ -8,7 +9,7 @@
     border-bottom: 1px solid #eeeeee;
     &__info {
       float: left;
-      width: calc(100% - 175px);
+      width: calc(100% - 75px);
       color: #333333;
       margin: 35px 0 10px;
       &_title {
@@ -27,6 +28,40 @@
       margin-top: 28px;
       padding: 6px 20px;
       border: 2px solid $blue;
+    }
+  }
+  .sendBox {
+    width: calc(100vw - #{$sidebar-w} - 40*2px);
+    min-width: 570px;
+    position: fixed;
+    bottom: 0;
+    left: 300px;
+    background-color: #DDDDDD;
+    padding: 20px 40px;
+    &__input {
+      width: calc(100vw - #{$sidebar-w} - 40*2px - 116px);
+      min-width: 454px;
+      height: 50px;
+      background-color: #ffffff;
+      padding: 0 10px;
+      margin-right: 15px;
+      font-size: 16px;
+      color: #434A54;
+      line-height: 48px;
+      border: none;
+    }
+    &__image {
+      position: absolute;
+      top: 50%;
+      right: 160px;
+      margin-top: -12px;
+    }
+    &__btn {
+      border: none;
+      background-color: #38AEF0;
+      color: #fff;
+      padding: 13px 20px;
+      float: right;
     }
   }
 }

@@ -1,7 +1,9 @@
 .main {
   @include clearfix;
+  min-width: 950px;
 }
 .note {
+  min-width: 950px;
   background-color: $blue;
   text-align: center;
   .note__title {
