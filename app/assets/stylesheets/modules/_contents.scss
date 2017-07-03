@@ -1,0 +1,32 @@
+.contents {
+  width: calc(100vw - #{$sidebar-w});
+  height: 100vh;
+  float: left;
+  .threadHead {
+    @include clearfix;
+    padding: 0 40px;
+    border-bottom: 1px solid #eeeeee;
+    &__info {
+      float: left;
+      width: calc(100% - 175px);
+      color: #333333;
+      margin: 35px 0 10px;
+      &_title {
+        font-size: 20px;
+        margin-bottom: 15px;
+        line-height: 1;
+      }
+      &_members {
+        font-size: 12px;
+        color: #999999;
+      }
+    }
+    &__edit {
+      color: $blue;
+      float: right;
+      margin-top: 28px;
+      padding: 6px 20px;
+      border: 2px solid $blue;
+    }
+  }
+}
