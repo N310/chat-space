@@ -24,4 +24,14 @@
       }
     }
   }
+  .groupList {
+    padding: 20px;
+    &__name {
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+    &__message {
+      font-size: 11px;
+    }
+  }
 }
