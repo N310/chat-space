@@ -13,24 +13,26 @@
         = link_to root_path do
           %i.fa.fa-pencil-square-o
     .groupList
-      .groupList__name
-        sample
-      .groupList__message
-        Hi! World!!
+      %a.groupList__link{"href":""}
+        %p.groupList__link_name
+          sample
+        %p.groupList__link_message
+          Hi! World!!
     .groupList
-      .groupList__name
-        sample2
-      .groupList__message
-        Bye Bye World!!
+      %a.groupList__link{"href":""}
+        %p.groupList__link_name
+          sample2
+        %p.groupList__link_message
+          Bye Bye World!!
   .contents
     .threadHead
       .threadHead__info
-        .threadHead__info_title
+        %p.threadHead__info_title
           sample
-        .threadHead__info_members
+        %p.threadHead__info_members
           Members: sato 310
       .threadHead__edit
-        %a.threadHead__edit_link{"href":""}
+        %a{"href":""}
           Edit
     .messages
       .message
@@ -39,7 +41,7 @@
             sato
           %span.message__head_date
             2017/07/01 03:10:00
-        .message__body
+        %p.message__body
           Hello World!!
       .message
         %p.message__head
@@ -47,7 +49,71 @@
             310
           %span.message__head_date
             2017/07/04 03:10:00
-        .message__body
+        %p.message__body
+          Hi! World!!
+      .message
+        %p.message__head
+          %span.message__head_name
+            310
+          %span.message__head_date
+            2017/07/04 03:10:00
+        %p.message__body
+          Hi! World!!
+      .message
+        %p.message__head
+          %span.message__head_name
+            310
+          %span.message__head_date
+            2017/07/04 03:10:00
+        %p.message__body
+          Hi! World!!
+      .message
+        %p.message__head
+          %span.message__head_name
+            310
+          %span.message__head_date
+            2017/07/04 03:10:00
+        %p.message__body
+          Hi! World!!
+      .message
+        %p.message__head
+          %span.message__head_name
+            310
+          %span.message__head_date
+            2017/07/04 03:10:00
+        %p.message__body
+          Hi! World!!
+      .message
+        %p.message__head
+          %span.message__head_name
+            310
+          %span.message__head_date
+            2017/07/04 03:10:00
+        %p.message__body
+          Hi! World!!
+      .message
+        %p.message__head
+          %span.message__head_name
+            310
+          %span.message__head_date
+            2017/07/04 03:10:00
+        %p.message__body
+          Hi! World!!
+      .message
+        %p.message__head
+          %span.message__head_name
+            310
+          %span.message__head_date
+            2017/07/04 03:10:00
+        %p.message__body
+          Hi! World!!
+      .message
+        %p.message__head
+          %span.message__head_name
+            310
+          %span.message__head_date
+            2017/07/04 03:10:00
+        %p.message__body
           Hi! World!!
     %form.sendBox
       %input.sendBox__input{"type":"text", "placeholder":"type a message"}

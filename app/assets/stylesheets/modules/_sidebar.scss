@@ -1,17 +1,19 @@
 .sidebar {
-  width: $sidebar-w;
-  height: 100vh;
-  float: left;
-  background-color: #2f3e51;
+  width: $sidebar_w;
+  height: $window_h;
   color: $white;
+  background-color: #2f3e51;
+  float: left;
+  position: relative;
+  z-index: 10;
+
   a {
     color: $white;
   }
+  
   .userInfo {
-    width: $sidebar-w - 20*2;
     padding: 37px 20px;
     background-color: #253141;
-    position: relative;
     &__name {
       font-size: 16px;
       font-weight: bold;
@@ -24,14 +26,20 @@
       }
     }
   }
+
   .groupList {
-    padding: 20px;
-    &__name {
-      font-size: 15px;
-      margin-bottom: 5px;
-    }
-    &__message {
-      font-size: 11px;
+    &__link {
+      padding: 20px;
+      &:hover {
+        background-color: #3c4f67;
+      }
+      &_name {
+        margin-bottom: 5px;
+        font-size: 15px;
+      }
+      &_message {
+        font-size: 11px;
+      }
     }
   }
 }
