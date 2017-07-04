@@ -3,10 +3,12 @@
   min-width: 650px;
   height: 100vh;
   float: left;
+  background-color: #fafafa;
   .threadHead {
     @include clearfix;
     padding: 0 40px;
     border-bottom: 1px solid #eeeeee;
+    background-color: #ffffff;
     &__info {
       float: left;
       width: calc(100% - 75px);
@@ -30,6 +32,28 @@
       border: 2px solid $blue;
     }
   }
+  .messages {
+    padding: 46px 40px 0;
+    .message {
+      color: #434a54;
+      margin-bottom: 40px;
+      &__head {
+        margin-bottom: 10px;
+        &_name {
+          font-size: 16px;
+          font-weight: bold;
+          margin-right: 10px;
+        }
+        &_date {
+          font-size: 12px;
+          color: #999999;
+        }
+      }
+      &__body {
+        font-size: 14px;
+      }
+    }
+  }
   .sendBox {
     width: calc(100vw - #{$sidebar-w} - 40*2px);
     min-width: 570px;
@@ -39,7 +63,7 @@
     background-color: #DDDDDD;
     padding: 20px 40px;
     &__input {
-      width: calc(100vw - #{$sidebar-w} - 40*2px - 116px);
+      width: calc(100vw - #{$sidebar-w} - 40*2px - 136px);
       min-width: 454px;
       height: 50px;
       background-color: #ffffff;
@@ -53,14 +77,14 @@
     &__image {
       position: absolute;
       top: 50%;
-      right: 160px;
+      right: 170px;
       margin-top: -12px;
     }
     &__btn {
       border: none;
       background-color: #38AEF0;
       color: #fff;
-      padding: 13px 20px;
+      padding: 13px 30px;
       float: right;
     }
   }

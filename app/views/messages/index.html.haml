@@ -1,6 +1,6 @@
-.note
-  %span.note__title
-    チャットグループが作成されました
+/ .note
+/   %span.note__title
+/     チャットグループが作成されました
 .main
   .sidebar
     .userInfo
@@ -16,7 +16,7 @@
       .groupList__name
         sample
       .groupList__message
-        Hello World!!
+        Hi! World!!
     .groupList
       .groupList__name
         sample2
@@ -30,20 +30,23 @@
         .threadHead__info_members
           Members: sato 310
       .threadHead__edit
-        Edit
+        %a.threadHead__edit_link{"href":""}
+          Edit
     .messages
       .message
-        .message__name
-          sato
-        .message__date
-          2017/07/01 03:10:00
+        %p.message__head
+          %span.message__head_name
+            sato
+          %span.message__head_date
+            2017/07/01 03:10:00
         .message__body
           Hello World!!
       .message
-        .message__name
-          310
-        .message__date
-          2017/07/04 03:10:00
+        %p.message__head
+          %span.message__head_name
+            310
+          %span.message__head_date
+            2017/07/04 03:10:00
         .message__body
           Hi! World!!
     %form.sendBox
