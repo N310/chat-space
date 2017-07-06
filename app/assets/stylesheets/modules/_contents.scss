@@ -6,6 +6,10 @@
   float: left;
   position: relative;
 
+  .main_hasnote & {
+    height: calc(#{$window_h} - 30px);
+  }
+
   .threadHead {
     @include clearfix;
     padding: 0 40px;

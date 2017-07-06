@@ -7,6 +7,9 @@
   position: relative;
   z-index: 10;
 
+  .main_hasnote & {
+    height: calc(#{$window_h} - 30px);
+  }
   a {
     color: $white;
   }
