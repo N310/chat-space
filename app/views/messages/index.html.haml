@@ -1,29 +1,9 @@
-/ .note
-/   %span.note__title
-/     チャットグループが作成されました
+.note
+  %span.note__title
+    チャットグループが作成されました
 .main
-  .sidebar
-    .userInfo
-      %p.userInfo__name
-        sato
-      %span.userInfo__icon.userInfo__icon_setting
-        = link_to root_path do
-          %i.fa.fa-cog
-      %span.userInfo__icon.userInfo__icon_makegroup
-        = link_to root_path do
-          %i.fa.fa-pencil-square-o
-    .groupList
-      %a.groupList__link{"href":""}
-        %p.groupList__link_name
-          sample
-        %p.groupList__link_message
-          Hi! World!!
-    .groupList
-      %a.groupList__link{"href":""}
-        %p.groupList__link_name
-          sample2
-        %p.groupList__link_message
-          Bye Bye World!!
+  = render "sidebar"
+
   .contents
     .threadHead
       .threadHead__info
