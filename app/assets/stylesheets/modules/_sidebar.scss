@@ -1,0 +1,48 @@
+.sidebar {
+  width: $sidebar_w;
+  height: $window_h;
+  color: $white;
+  background-color: #2f3e51;
+  float: left;
+  position: relative;
+  z-index: 10;
+
+  .main_hasnote & {
+    height: calc(#{$window_h} - 30px);
+  }
+  a {
+    color: $white;
+  }
+  
+  .userInfo {
+    padding: 37px 20px;
+    background-color: #253141;
+    &__name {
+      font-size: 16px;
+      font-weight: bold;
+      display: inline-block;
+    }
+    &__icon {
+      float: right;
+      &_makegroup {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .groupList {
+    &__link {
+      padding: 20px;
+      &:hover {
+        background-color: #3c4f67;
+      }
+      &_name {
+        margin-bottom: 5px;
+        font-size: 15px;
+      }
+      &_message {
+        font-size: 11px;
+      }
+    }
+  }
+}

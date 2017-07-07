@@ -1,0 +1,17 @@
+.main {
+  @include clearfix;
+  min-width: 950px;
+}
+a {
+  display: block;
+  text-decoration: none;
+}
+.note {
+  min-width: 950px;
+  background-color: $blue;
+  text-align: center;
+  .note__title {
+    color: $white;
+    line-height: 30px;
+  }
+}

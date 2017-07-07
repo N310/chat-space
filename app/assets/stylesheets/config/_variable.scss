@@ -1,0 +1,19 @@
+//color
+$blue: #38AEF0;
+$white: #FFFFFF;
+
+//width
+$sidebar_w: 300px;
+$contents_w: calc(100vw - #{$sidebar-w});
+$contents_minw: 650px;
+
+$threadHead__edit_w: 75px;
+$threadHead__info_w: calc(100% - #{$threadHead__edit_w});
+
+$sendBox_w: calc(#{$contents_w} - 40*2px);
+$sendBox_minw: calc(#{$contents_minw} - 40*2px);
+$sendBox__btn_w: 101px;
+$sendBox__input_minw: calc(#{$sendBox_minw} - #{$sendBox__btn_w} - 10*2px - 15px);
+
+//width
+$window_h: 100vh;
