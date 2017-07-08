@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
   def edit
-    @user = current_user
   end
 
   def update
-    current_user.update(user_params)
-    render template: "messages/index"
+    if current_user.update(user_params)
+      redirect_to root_path
+    else
+      render "edit"
+    end
   end
 
   private
