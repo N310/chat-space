@@ -5,8 +5,12 @@ class UsersController < ApplicationController
 
   def update
     user = User.find(params[:id])
-    user.update(user_params) if user.id == current_user.id
-    redirect_to root_path
+    if user.id == current_user.id
+      user.update!(user_params)
+      redirect_to root_path
+    else
+      redirect_to edit_user_path
+    end
   end
 
   private
