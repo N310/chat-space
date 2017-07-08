@@ -4,8 +4,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = current_user
-    user.update(user_params)
+    current_user.update(user_params)
     render template: "messages/index"
   end
 
