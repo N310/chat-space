@@ -8,10 +8,15 @@ a {
 }
 .note {
   min-width: 950px;
-  background-color: $blue;
   text-align: center;
   &__title {
     color: $white;
     line-height: 30px;
+    &_notice {
+      background-color: $blue;
+    }
+    &_alert {
+      background-color: #D65F4C;
+    }
   }
 }
