@@ -9,12 +9,10 @@ a {
 .note {
   min-width: 950px;
   text-align: center;
+  background-color: $blue;
   &__title {
     color: $white;
     line-height: 30px;
-    &_notice {
-      background-color: $blue;
-    }
     &_alert {
       background-color: #D65F4C;
     }
