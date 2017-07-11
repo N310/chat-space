@@ -3,7 +3,7 @@
     %p.userInfo__name
       sato
     %span.userInfo__icon.userInfo__icon_setting
-      = link_to root_path do
+      = link_to "/users/#{current_user.id}/edit" do
         %i.fa.fa-cog
     %span.userInfo__icon.userInfo__icon_makegroup
       = link_to root_path do
