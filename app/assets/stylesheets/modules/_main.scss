@@ -10,7 +10,7 @@ a {
   min-width: 950px;
   background-color: $blue;
   text-align: center;
-  .note__title {
+  &__title {
     color: $white;
     line-height: 30px;
   }
