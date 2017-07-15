@@ -1,4 +1,3 @@
 .chat-group-form
   %h1 チャットグループ編集
-  = form_for @group, url: {controller: :messages, action: :index}, html: {id: 'edit_chat_group_22', class: 'edit_chat_group'} do |f|
-    = render 'form', f: f
+  = render partial: 'form', locals: { group: @group }
