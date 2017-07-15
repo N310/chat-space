@@ -9,6 +9,7 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.create(group_params)
+    redirect_to root_path, flash: {update: 'グループを作成しました'}
   end
 
   def update
