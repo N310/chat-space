@@ -9,7 +9,7 @@
       = link_to new_group_path do
         %i.fa.fa-pencil-square-o
 
-  - belong_groups.each do |belong_group|
+  - current_user.groups.each do |belong_group|
     .groupList
       %a.groupList__link{"href":""}
         %p.groupList__link_name

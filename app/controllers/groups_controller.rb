@@ -2,7 +2,6 @@ class GroupsController < ApplicationController
   before_action :create_group_instance, only: [:edit, :update]
 
   def index
-    get_belong_groups
     render template: "messages/index"
   end
 
@@ -44,14 +43,6 @@ class GroupsController < ApplicationController
       else
         redirect_to edit_group_path, alert: 'グループメンバーではないので編集できません' and return
       end
-    end
-  end
-
-  def get_belong_groups
-    belong_groups_mid = UserGroup.where(user_id: current_user.id)
-    @belong_groups = []
-    belong_groups_mid.each do |belong_group_mid|
-      @belong_groups.push(Group.find(belong_group_mid.group_id)) 
     end
   end
 end
