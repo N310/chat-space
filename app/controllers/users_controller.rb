@@ -4,9 +4,9 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
-      redirect_to root_path, flash: {update: 'アカウントが更新されました。'}
+      redirect_to root_path, notice: 'アカウントが更新されました。'
     else
-      flash.now[:no_update] = "アカウントの更新ができませんでした。"
+      flash.now[:error] = "アカウントの更新ができませんでした。"
       render "edit"
     end
   end

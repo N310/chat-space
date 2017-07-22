@@ -15,7 +15,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     if @group.save
-      redirect_to root_path, flash: {update: 'グループを作成しました'}
+      redirect_to root_path, notice: 'グループを作成しました'
     else
       render :new
     end
@@ -26,9 +26,9 @@ class GroupsController < ApplicationController
     group.user_groups.each do |user_group|
       if user_group.user_id == current_user.id
         group.update(group_params)
-        redirect_to root_path, flash: {edit: 'グループを編集しました'} and return
+        redirect_to root_path, notice: 'グループを編集しました' and return
       else
-        redirect_to edit_group_path, flash: {editerror: 'グループメンバーではないので編集できません'} and return
+        redirect_to edit_group_path, alert: 'グループメンバーではないので編集できません' and return
       end
     end
   end
