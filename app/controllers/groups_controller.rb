@@ -2,7 +2,6 @@ class GroupsController < ApplicationController
   before_action :create_group_instance, only: [:edit, :update]
 
   def index
-    render template: "messages/index"
   end
 
   def new
