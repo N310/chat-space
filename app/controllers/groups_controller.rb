@@ -8,8 +8,13 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.create(group_params)
-    redirect_to root_path, flash: {update: 'グループを作成しました'}
+    @group = Group.new(group_params)
+    if @group.save
+      redirect_to root_path, flash: {update: 'グループを作成しました'} and return
+    else
+      render :new and return
+    end
+    redirect_to new_group_path
   end
 
   def update
