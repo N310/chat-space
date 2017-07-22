@@ -1,3 +1,12 @@
 ja:
-  attributes:
-    name: グループ名
+  activerecord: &activerecord
+    models:
+      group: グループ
+    attributes:
+      group:
+        name: グループ名
+
+
+  # activemodelの翻訳もactiverecordに記載している
+  activemodel:
+    <<: activerecord
