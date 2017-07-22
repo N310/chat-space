@@ -8,15 +8,11 @@
     %span.userInfo__icon.userInfo__icon_makegroup
       = link_to new_group_path do
         %i.fa.fa-pencil-square-o
-  .groupList
-    %a.groupList__link{"href":""}
-      %p.groupList__link_name
-        sample
-      %p.groupList__link_message
-        Hi! World!!
-  .groupList
-    %a.groupList__link{"href":""}
-      %p.groupList__link_name
-        sample2
-      %p.groupList__link_message
-        Bye Bye World!!
+
+  - current_user.groups.each do |belong_group|
+    .groupList
+      %a.groupList__link{"href":""}
+        %p.groupList__link_name
+          #{belong_group.name}
+        %p.groupList__link_message
+          まだメッセージはありません。
