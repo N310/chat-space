@@ -12,7 +12,7 @@
       = f.label :name, "グループ名", class: "chat-group-form__label", for: "chat_group_name"
     .chat-group-form__field--right
       - if params[:action] == "edit"
-        = f.text_field :name, placeholder: "グループ名を入力してください", id: "chat_group_name", class: "chat-group-form__input", value: "test value"
+        = f.text_field :name, placeholder: "グループ名を入力してください", id: "chat_group_name", class: "chat-group-form__input", value: group.name
       - else
         = f.text_field :name, placeholder: "グループ名を入力してください", id: "chat_group_name", class: "chat-group-form__input"
   .chat-group-form__field.clearfix
