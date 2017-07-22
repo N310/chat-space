@@ -1,4 +1,8 @@
 class GroupsController < ApplicationController
+  def index
+    render template: "messages/index"
+  end
+
   def new
     @group = Group.new
     @group.user_groups.build
