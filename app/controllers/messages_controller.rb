@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
+  before_action :create_group_message_instance
+
   def index
-    @group = Group.find(params[:group_id])
     @message = @group.messages.build
   end
 
@@ -10,7 +11,6 @@ class MessagesController < ApplicationController
       redirect_to group_messages_path
     else
       flash.now[:error] = @message.errors[:base][0]
-      @group = Group.find(params[:group_id])
       render :index
     end
   end
@@ -18,5 +18,10 @@ class MessagesController < ApplicationController
   private
   def message_params
     params.require(:message).permit(:body, :image).merge(user_id: current_user.id, group_id: params[:group_id])
+  end
+
+  def create_group_message_instance
+    @group = Group.find(params[:group_id])
+    @messages = @group.messages
   end
 end

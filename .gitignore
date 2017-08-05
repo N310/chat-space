@@ -35,5 +35,5 @@ doc/
 .byebug_history
 
 # images of message
-/uploads
+public/uploads/
 
