@@ -1,11 +1,11 @@
 class MessagesController < ApplicationController
+  before_action :create_group_message_instance
+
   def index
-    create_group_message_instance
     @message = @group.messages.build
   end
 
   def create
-    create_group_message_instance
     @message = Message.new(message_params)
     if @message.save
       redirect_to group_messages_path
