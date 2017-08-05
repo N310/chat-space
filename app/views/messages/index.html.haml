@@ -12,20 +12,7 @@
         %a{"href":""}
           Edit
     .messages
-      - @messages.each do |message|
-        .message
-          %p.message__head
-            %span.message__head_name
-              - if message.user
-                = message.user[:name]
-            %span.message__head_date
-              -if message.created_at
-                = message.created_at.strftime('%Y/%m/%d %H:%M')
-          %p.message__body
-            - if message.body
-              = message.body
-            - if message.image_url
-              = image_tag message.image_url(:thumb)
+      = render partial: "message"
 
     = form_for([@group, @message], html: { class: 'sendBox' }) do |f|
       = f.text_field :body , placeholder: "type a message", class: "sendBox__input"
