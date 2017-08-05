@@ -6,7 +6,9 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    @message.save
+    unless @message.save
+      flash[:error] = @message.errors[:base][0]
+    end
     redirect_to group_messages_path
   end
 
