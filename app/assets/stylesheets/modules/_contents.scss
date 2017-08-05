@@ -87,6 +87,10 @@
       position: absolute;
       top: 50%;
       right: 170px;
+      cursor: pointer;
+      &-field {
+        display: none;
+      }
     }
     &__btn {
       padding: 13px 30px;
@@ -94,6 +98,7 @@
       border: none;
       color: #fff;
       float: right;
+      cursor: pointer;
     }
   }
 }
