@@ -12,87 +12,21 @@
         %a{"href":""}
           Edit
     .messages
-      .message
-        %p.message__head
-          %span.message__head_name
-            sato
-          %span.message__head_date
-            2017/07/01 03:10:00
-        %p.message__body
-          Hello World!!
-      .message
-        %p.message__head
-          %span.message__head_name
-            310
-          %span.message__head_date
-            2017/07/04 03:10:00
-        %p.message__body
-          Hi! World!!
-      .message
-        %p.message__head
-          %span.message__head_name
-            310
-          %span.message__head_date
-            2017/07/04 03:10:00
-        %p.message__body
-          Hi! World!!
-      .message
-        %p.message__head
-          %span.message__head_name
-            310
-          %span.message__head_date
-            2017/07/04 03:10:00
-        %p.message__body
-          Hi! World!!
-      .message
-        %p.message__head
-          %span.message__head_name
-            310
-          %span.message__head_date
-            2017/07/04 03:10:00
-        %p.message__body
-          Hi! World!!
-      .message
-        %p.message__head
-          %span.message__head_name
-            310
-          %span.message__head_date
-            2017/07/04 03:10:00
-        %p.message__body
-          Hi! World!!
-      .message
-        %p.message__head
-          %span.message__head_name
-            310
-          %span.message__head_date
-            2017/07/04 03:10:00
-        %p.message__body
-          Hi! World!!
-      .message
-        %p.message__head
-          %span.message__head_name
-            310
-          %span.message__head_date
-            2017/07/04 03:10:00
-        %p.message__body
-          Hi! World!!
-      .message
-        %p.message__head
-          %span.message__head_name
-            310
-          %span.message__head_date
-            2017/07/04 03:10:00
-        %p.message__body
-          Hi! World!!
-      .message
-        %p.message__head
-          %span.message__head_name
-            310
-          %span.message__head_date
-            2017/07/04 03:10:00
-        %p.message__body
-          Hi! World!!
-      
+      - @messages.each do |message|
+        .message
+          %p.message__head
+            %span.message__head_name
+              - if message.user
+                = message.user[:name]
+            %span.message__head_date
+              -if message.created_at
+                = message.created_at
+          %p.message__body
+            - if message.body
+              = message.body
+            - if message.image
+              = message.image
+
     = form_for([@group, @message], html: { class: 'sendBox' }) do |f|
       = f.text_field :body , placeholder: "type a message", class: "sendBox__input"
       = f.label :image, class: "sendBox__image" do
