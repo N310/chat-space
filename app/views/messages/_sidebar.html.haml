@@ -9,10 +9,10 @@
       = link_to new_group_path do
         %i.fa.fa-pencil-square-o
 
-  - current_user.groups.each do |belong_group|
+  - current_user.groups.each_with_index do |belong_group, index|
     .groupList
       = link_to group_messages_path(belong_group.id), class: "groupList__link" do
         %p.groupList__link_name
           = belong_group.name
         %p.groupList__link_message
-          = get_newmessage belong_group
+          = belong_group.get_latest_message
