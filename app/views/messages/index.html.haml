@@ -5,12 +5,13 @@
     .threadHead
       .threadHead__info
         %p.threadHead__info_title
-          sample
+          = @group.name
         %p.threadHead__info_members
-          Members: sato 310
+          Members: 
+          - @group.users.each do |user|
+            %span= user.name
       .threadHead__edit
-        %a{"href":""}
-          Edit
+        = link_to "Edit", edit_group_path(@group.id)
     .messages
       = render partial: "message"
 
