@@ -9,9 +9,9 @@
         %p.threadHead__info_members
           Members: 
           - @group.users.each do |user|
-            %span #{user.name}
+            %span= user.name
       .threadHead__edit
-        = link_to "Edit", "/groups/#{@group.id}/edit"
+        = link_to "Edit", edit_group_path(@group.id)
     .messages
       = render partial: "message"
 

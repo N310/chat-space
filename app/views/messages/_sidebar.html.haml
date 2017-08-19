@@ -3,7 +3,7 @@
     %p.userInfo__name
       = current_user.name
     %span.userInfo__icon.userInfo__icon_setting
-      = link_to "/users/#{current_user.id}/edit" do
+      = link_to edit_user_path(current_user.id) do
         %i.fa.fa-cog
     %span.userInfo__icon.userInfo__icon_makegroup
       = link_to new_group_path do
@@ -11,15 +11,8 @@
 
   - current_user.groups.each do |belong_group|
     .groupList
-      = link_to "/groups/#{belong_group.id}/messages", class: "groupList__link" do
+      = link_to group_messages_path(belong_group.id), class: "groupList__link" do
         %p.groupList__link_name
           = belong_group.name
         %p.groupList__link_message
-          - new_message = belong_group.messages.order('created_at DESC').first
-          - if new_message
-            - if new_message.body
-              = new_message.body 
-            - elsif new_message.image
-              画像が投稿されています
-          - else
-            まだメッセージはありません。
+          = get_newmessage belong_group
