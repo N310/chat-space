@@ -11,6 +11,8 @@ ja:
           attributes:
             group_id:
               blank: グループIDを入力してください
+            user_id:
+              blank: ユーザーIDが空です
 
   # activemodelの翻訳もactiverecordに記載している
   activemodel:
