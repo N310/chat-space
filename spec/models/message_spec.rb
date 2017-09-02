@@ -12,6 +12,11 @@ describe Message do
       message = build(:message, body: "")
       expect(message).to be_valid
     end
+
+    it "is valid with a bory and a image of message" do
+      message = build(:message)
+      expect(message).to be_valid
+    end
   end
   
 end
