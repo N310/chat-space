@@ -10,7 +10,7 @@ ja:
         message:
           attributes:
             group_id:
-              blank: グループIDを入力してください
+              blank: グループIDが空です
             user_id:
               blank: ユーザーIDが空です
 

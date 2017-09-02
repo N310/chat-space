@@ -27,7 +27,7 @@ describe Message do
     it "is invalid without group_id of message" do
       message = build(:message, group_id: "")
       message.valid?
-      expect(message.errors[:group_id]).to include("グループIDを入力してください")
+      expect(message.errors[:group_id]).to include("グループIDが空です")
     end
 
     it "is invalid without user_id of message" do
