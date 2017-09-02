@@ -5,7 +5,14 @@ ja:
     attributes:
       group:
         name: グループ名
-
+    errors:
+      models:
+        message:
+          attributes:
+            group_id:
+              blank: グループIDが空です
+            user_id:
+              blank: ユーザーIDが空です
 
   # activemodelの翻訳もactiverecordに記載している
   activemodel:
