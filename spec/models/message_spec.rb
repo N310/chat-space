@@ -17,6 +17,12 @@ describe Message do
       message = build(:message)
       expect(message).to be_valid
     end
+
+    it "is invalid without a bory and a image of message" do
+      message = build(:message, body: "", image: "")
+      message.valid?
+      expect(message.errors[:base]).to include("メッセージを入力してください")
+    end
   end
   
 end
