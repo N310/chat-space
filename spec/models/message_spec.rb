@@ -23,6 +23,12 @@ describe Message do
       message.valid?
       expect(message.errors[:base]).to include("メッセージを入力してください")
     end
+
+    it "is invalid without group_id of message" do
+      message = build(:message, group_id: "")
+      message.valid?
+      expect(message.errors[:group_id]).to include("グループIDを入力してください")
+    end
   end
   
 end

@@ -5,7 +5,12 @@ ja:
     attributes:
       group:
         name: グループ名
-
+    errors:
+      models:
+        message:
+          attributes:
+            group_id:
+              blank: グループIDを入力してください
 
   # activemodelの翻訳もactiverecordに記載している
   activemodel:

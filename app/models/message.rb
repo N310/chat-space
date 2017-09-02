@@ -13,4 +13,5 @@ class Message < ApplicationRecord
   belongs_to :group
   mount_uploader :image, ImageUploader
   validates_with MessagesValidator, messages: [:body, :image]
+  validates :group_id, presence: true
 end
