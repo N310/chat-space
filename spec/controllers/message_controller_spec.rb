@@ -50,6 +50,11 @@ describe MessagesController do
           post :create, params: { message: attributes_for(:message), group_id: group.id }
         }.to change(Message, :count).by(1) 
       end
+
+      it "redirects to group_messages_path" do
+        post :create, params: { message: attributes_for(:message), group_id: group.id }
+        expect(response).to redirect_to group_messages_path
+      end   
     end
   end
 end
