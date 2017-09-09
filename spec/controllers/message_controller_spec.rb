@@ -28,5 +28,12 @@ describe MessagesController do
         expect(response).to render_template :index
       end
     end
+
+    context 'user logout' do
+      it "redirect to new_user_session_path" do
+        get :index, params: { group_id: group }
+        expect(response).to redirect_to new_user_session_path
+      end
+    end
   end
 end
