@@ -61,7 +61,7 @@ describe MessagesController do
         }.not_to change(Message, :count) 
       end 
 
-      it "renders the :index template" do
+      it "can't save message and renders the :index template" do
         post :create, params: { message: empty_message, group_id: group.id }
         expect(response).to render_template :index
       end  
