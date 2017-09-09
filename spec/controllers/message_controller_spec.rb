@@ -23,6 +23,10 @@ describe MessagesController do
       it "assigns the requested message to @message" do
         expect(assigns(:message)).to be_a_new Message
       end
+
+      it "renders the :index template" do
+        expect(response).to render_template :index
+      end
     end
   end
 end
