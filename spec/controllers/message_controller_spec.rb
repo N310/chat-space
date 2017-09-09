@@ -4,6 +4,8 @@ describe MessagesController do
   let (:user) { create(:user) }
   let (:group) { create(:group) }
   let (:messages) { create_list(:message, 2, user: user, group: group ) }
+  # let (:message) { create(:message, user: user, group: group ) }
+  # let(:params) { { message_id: message } }
 
   describe 'GET #index' do
     context 'user login' do
@@ -33,6 +35,20 @@ describe MessagesController do
       it "redirect to new_user_session_path" do
         get :index, params: { group_id: group }
         expect(response).to redirect_to new_user_session_path
+      end
+    end
+  end
+
+  describe 'GET #create' do
+    context 'user login' do
+      before do
+        login_user user
+      end
+
+      it "can save message in database" do
+        expect{
+          post :create, params: { message: attributes_for(:message), group_id: group.id }
+        }.to change(Message, :count).by(1) 
       end
     end
   end
