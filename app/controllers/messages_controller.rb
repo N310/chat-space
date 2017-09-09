@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   before_action :create_group_message_instance
 
   def index
-    @message = @group.messages.build
+    @message = Message.new
   end
 
   def create
