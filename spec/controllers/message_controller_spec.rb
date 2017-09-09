@@ -4,8 +4,6 @@ describe MessagesController do
   let (:user) { create(:user) }
   let (:group) { create(:group) }
   let (:messages) { create_list(:message, 2, user: user, group: group ) }
-  # let (:message) { create(:message, user: user, group: group ) }
-  # let(:params) { { message_id: message } }
 
   describe 'GET #index' do
     context 'user login' do
@@ -54,7 +52,14 @@ describe MessagesController do
       it "redirects to group_messages_path" do
         post :create, params: { message: attributes_for(:message), group_id: group.id }
         expect(response).to redirect_to group_messages_path
-      end   
+      end  
+
+      it "can't save message in database" do
+        message = {:body=>"",:image=>""}
+        expect{
+          post :create, params: { message: message, group_id: group.id }
+        }.not_to change(Message, :count) 
+      end 
     end
   end
 end
