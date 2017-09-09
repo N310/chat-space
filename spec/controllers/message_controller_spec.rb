@@ -4,6 +4,7 @@ describe MessagesController do
   let (:user) { create(:user) }
   let (:group) { create(:group) }
   let (:messages) { create_list(:message, 2, user: user, group: group ) }
+  let (:empty_message) { {:body=>"",:image=>""} }
 
   describe 'GET #index' do
     context 'user login' do
@@ -55,11 +56,15 @@ describe MessagesController do
       end  
 
       it "can't save message in database" do
-        message = {:body=>"",:image=>""}
         expect{
-          post :create, params: { message: message, group_id: group.id }
+          post :create, params: { message: empty_message, group_id: group.id }
         }.not_to change(Message, :count) 
       end 
+
+      it "renders the :index template" do
+        post :create, params: { message: empty_message, group_id: group.id }
+        expect(response).to render_template :index
+      end  
     end
   end
 end
