@@ -38,11 +38,12 @@
   }
 
   .messages {
-    padding: 46px 40px 0;
+    padding: 45px 40px 0;
     height: calc(#{$window_h} - 189px);
     overflow: auto;
+    box-sizing: border-box;
     .message {
-      margin-bottom: 40px;
+      padding-bottom: 40px;
       color: #434a54;
       &__head {
         margin-bottom: 10px;

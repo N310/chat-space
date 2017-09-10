@@ -1,6 +1,6 @@
 $(function () {
   function buildHTML(message) {
-    messageImage = "";
+    var messageImage = "";
     if (message.image_url) {
       messageImage = `<img src="${message.image_url}">`;
     }
@@ -31,9 +31,16 @@ $(function () {
       contentType: false,
     })
     .done(function(data){
+      var messages = $('.messages');
       var html = buildHTML(data);
-      $('.messages').append(html)
+      messages.append(html)
       $('.sendBox__input').val('');
+      messageHeightSun = 0;
+      $('.message').each(function() {
+        messageHeightSun += $(this).innerHeight();
+      });
+      scrollPx = messageHeightSun - messages.height();
+      messages.animate({scrollTop: scrollPx}, 500, 'swing');
     })
   })
 })
