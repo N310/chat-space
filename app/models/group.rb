@@ -9,7 +9,7 @@ class Group < ApplicationRecord
   def get_latest_message
     latest_message = self.messages.order('created_at DESC').first
     if latest_message
-      if latest_message.body
+      if latest_message.body != ""
         latest_message.body 
       elsif latest_message.image
         "画像が投稿されています"
