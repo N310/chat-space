@@ -42,5 +42,8 @@ $(function () {
       scrollPx = messageHeightSun - messages.height();
       messages.animate({scrollTop: scrollPx}, 500, 'swing');
     })
+    .fail(function(){
+      alert('error');
+    })
   })
 })
