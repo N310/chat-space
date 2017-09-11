@@ -21,10 +21,9 @@ $(function () {
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
-    var type = $(this).attr('method');
     $.ajax({
       url: url,
-      type: type,
+      type: 'POST',
       data: formData,
       dataType: 'json',
       processData: false,
