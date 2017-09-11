@@ -34,12 +34,7 @@ $(function () {
       var html = buildHTML(data);
       messages.append(html)
       $('.sendBox__input').val('');
-      messageHeightSun = 0;
-      $('.message').each(function() {
-        messageHeightSun += $(this).innerHeight();
-      });
-      scrollPx = messageHeightSun - messages.height();
-      messages.animate({scrollTop: scrollPx}, 500, 'swing');
+      messages.animate({scrollTop: messages[0].scrollHeight}, 500, 'swing');
     })
     .fail(function(){
       alert('error');
