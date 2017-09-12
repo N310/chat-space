@@ -27,12 +27,12 @@ $(function () {
       data: formData,
       dataType: 'json',
       processData: false,
-      contentType: false,
+      contentType: false
     })
     .done(function(data){
       var messages = $('.messages');
       var html = buildHTML(data);
-      messages.append(html)
+      messages.append(html);
       $('.sendBox__input').val('');
       messages.animate({scrollTop: messages[0].scrollHeight}, 500, 'swing');
     })
