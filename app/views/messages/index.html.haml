@@ -15,7 +15,7 @@
     .messages
       = render partial: "message"
 
-    = form_for([@group, @message], html: { class: 'sendBox' }) do |f|
+    = form_for([@group, @message], html: { class: 'sendBox' }, remote: true) do |f|
       = f.text_field :body , placeholder: "type a message", class: "sendBox__input"
       = f.label :image, class: "sendBox__image" do
         %i.fa.fa-picture-o
