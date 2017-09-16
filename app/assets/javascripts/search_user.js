@@ -26,4 +26,8 @@ $(function(){
       alert('ユーザー検索に失敗しました');
     });
   });
+
+  $(document).on("click", ".user-search-add", function() {
+    console.log(true);
+  });
 });
