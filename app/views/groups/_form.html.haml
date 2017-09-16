@@ -30,10 +30,10 @@
       = f.label :member, "チャットメンバー", class: "chat-group-form__label", for: "chat_group_member"
     .chat-group-form__field--right
       #chat-group-users
-        .chat-group-user.clearfix#chat-group-user-@user.id
-          = f.hidden_field :user_ids, value: "@user.id"
-          .chat-group-user__name
-            user_name
+        .chat-group-user.clearfix
+          %input{:type => "hidden", :name => 'group[user_ids][]', :value => "#{current_user.id}"}
+          .chat-group-user__name<
+            = current_user.name
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
