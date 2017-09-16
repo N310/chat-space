@@ -35,13 +35,11 @@ class GroupsController < ApplicationController
   end
 
   def update_user_belongs_group
-    @group.user_groups.each do |user_group|
-      if user_group.user_id == current_user.id
-        @group.update(group_params)
-        redirect_to root_path, notice: 'グループを編集しました' and return
-      else
-        redirect_to edit_group_path, alert: 'グループメンバーではないので編集できません' and return
-      end
+    if @group.user_groups.map{|user_group| user_group.user_id}.count(current_user.id) != 0
+      @group.update(group_params)
+      redirect_to root_path, notice: 'グループを編集しました' and return
+    else
+      redirect_to edit_group_path, alert: 'グループメンバーではないので編集できません' and return
     end
   end
 end
