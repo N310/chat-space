@@ -1,5 +1,5 @@
 - @messages.each do |message|
-  .message
+  .message{data: {message_id: message.id}}
     %p.message__head
       %span.message__head_name
         = message.user[:name]
