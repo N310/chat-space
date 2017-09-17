@@ -1,11 +1,18 @@
 class MessagesController < ApplicationController
-  before_action :create_group_message_instance
+  before_action :set_group
+  before_action :set_messages, only: :create
 
   def index
     @message = Message.new
     respond_to do |format|
-      format.html
-      format.json
+      format.html do
+        @messages = @group.messages
+      end
+      format.json do 
+        if params[:lastMessageId]
+          @latestMessage = @group.messages.where("id > ?", params[:lastMessageId])
+        end
+      end
     end
   end
 
@@ -27,8 +34,11 @@ class MessagesController < ApplicationController
     params.require(:message).permit(:body, :image).merge(user_id: current_user.id, group_id: params[:group_id])
   end
 
-  def create_group_message_instance
+  def set_group
     @group = Group.find(params[:group_id])
+  end
+
+  def set_messages
     @messages = @group.messages
   end
 end

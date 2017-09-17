@@ -30,7 +30,6 @@ $(function () {
       contentType: false
     })
     .done(function(data){
-      debugger;
       var messagesArea = $('.messages');
       var html = buildHTML(data);
       messagesArea.append(html);
@@ -50,20 +49,15 @@ $(function () {
       $.ajax({
         url: url,
         type: 'GET',
+        data: {lastMessageId : lastMessageId},
         dataType: 'json'
       })
       .done(function(data){
         var messagesArea = $('.messages');
-        var length = data.length;
-        var latestMessageId = data[length-1].id;
-        if (latestMessageId > lastMessageId) {
-          var differenceNum = latestMessageId - lastMessageId;
-          for (i = differenceNum; i > 0; i--) {
-            var message = data[length-i]
-            var html = buildHTML(message);
-            messagesArea.append(html);
-          }
-        }
+        data.forEach(function(message){
+          var html = buildHTML(message);
+          messagesArea.append(html);
+        });
         messagesArea.animate({scrollTop: messagesArea[0].scrollHeight}, 500, 'swing');
       })
       .fail(function(){
